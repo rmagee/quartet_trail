@@ -22,7 +22,37 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sites",
-    "quartet_trail",
+    'quartet_manifest.apps.QuartetManifestConfig',
+    'quartet_epcis.apps.QuartetEPCISConfig',
+    'quartet_capture.apps.QuartetCaptureConfig',
+    'quartet_masterdata.apps.QuartetMasterdataConfig',
+    'quartet_output.apps.QuartetOutputConfig',
+    'quartet_trail.apps.QuartetTrailConfig',
+    'serialbox.apps.PoolsConfig',
+    'random_flavorpack.apps.RandomFlavorpackConfig',
+    'list_based_flavorpack.apps.ListBasedFlavorpackConfig',
+    'quartet_templates.apps.QuartetTemplatesConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'allauth',
+    'rest_auth',
+    'rest_auth.registration',
+    'rest_framework_swagger',
+    'corsheaders',
+    'django_filters',
+    'simple_history',
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 SITE_ID = 1

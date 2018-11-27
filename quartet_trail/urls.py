@@ -5,7 +5,7 @@ from . import models
 from . import views
 from django.apps import apps
 
-urlpatterns = []
+urlpatterns = [url('^quartet-trail/trail-delta/$', views.QuartetTrailDelta.as_view({'get': 'list'}))]
 
 def register_models(app_list, exclude_models):
     '''

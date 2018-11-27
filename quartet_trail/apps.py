@@ -4,5 +4,6 @@ from django.apps import AppConfig
 class QuartetTrailConfig(AppConfig):
     name = 'quartet_trail'
 
-
+    def ready(self):
+        import quartet_trail.signals
 

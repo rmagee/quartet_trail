@@ -5,6 +5,8 @@ from django.apps import apps
 from model_utils.models import TimeStampedModel
 from simple_history import register
 from django.conf import settings
+from django.db import models
+from django.contrib.auth import get_user_model
 
 DEFAULT_AUDIT_TRACKED_APPS = ('quartet_masterdata',
                               'quartet_output',
@@ -51,3 +53,40 @@ def get_model_fullname(model):
 # register all the models. You will need to run makemigrations/migrate if the
 # list changes.
 register_models(tracked_app_list, exclude_models)
+
+
+class QuartetTrailDelta(models.Model):
+    '''
+    Saves the delta between two historical records for any model tracked. If
+    PRUNE_TRAIL_RECORDS_BETWEEN_DELTA setting is enabled, the previous
+    historical record will be deleted unless it's a "changed" (~)
+    historical record. If TRAIL_DELETE_CHANGE_RECORDS is
+    disabled, all historical records will be kept.
+    '''
+    model_name = models.CharField(
+        max_length = 255,
+        null=False,
+        db_index=True,
+        help_text=('The class name of the model'))
+    model_pk = models.CharField(
+        max_length = 255,
+        null=False,
+        db_index=True,
+        help_text=('The primary key of the model, could be an integer or anything else')
+    )
+    # we don't use a foreignKey here to prevent any sort of dependency on the existence of the user.
+    username = models.CharField(
+        max_length = 255,
+        null=False,
+        db_index=True,
+        help_text=('The username of the user who triggered this action')
+    )
+    date = models.DateTimeField(null=False, help_text=('The date when the change occurred'))
+    change = models.TextField(blank=True, null=True)
+    change_type = models.CharField(max_length=1, choices=(
+                ('+', ('Created')),
+                ('~', ('Changed')),
+                ('-', ('Deleted')),
+    ))
+    
+    

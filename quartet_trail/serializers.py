@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from . import models
 
 User = get_user_model()
 
@@ -17,4 +18,9 @@ class QuartetTrailSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = None
+        fields = '__all__'
+
+class QuartetTrailDeltaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.QuartetTrailDelta
         fields = '__all__'

@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         ('quartet_output', '0002_auto_20180909_0946'),
         ('quartet_capture', '0002_auto_20181001_1407'),
         ('quartet_templates', '0001_initial'),
-        ('quartet_masterdata', '0003_auto_20180824_2054'),
+        ('quartet_masterdata', '0002_auto_20180821_1919'), #'0003_auto_20180824_2054'),
         ('serialbox', '0003_auto_20180725_1958'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]

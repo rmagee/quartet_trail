@@ -2,10 +2,10 @@ from os import path
 from django.apps import apps
 from rest_framework import viewsets
 from . import serializers
-
+from . import models
 
 class QuartetTrailViewSet(viewsets.ModelViewSet):
-
+    
     @property
     def model(self):
         current_path = path.split(self.request.path)
@@ -25,3 +25,8 @@ class QuartetTrailViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         serializers.QuartetTrailSerializer.Meta.model = self.model
         return serializers.QuartetTrailSerializer
+
+class QuartetTrailDelta(viewsets.ModelViewSet):
+    queryset = models.QuartetTrailDelta.objects.all()
+    serializer_class = serializers.QuartetTrailDeltaSerializer
+    

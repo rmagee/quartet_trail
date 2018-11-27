@@ -1,2 +1,12 @@
 django-model-utils>=2.0
 # Additional requirements go here
+django-simple-history
+quartet-masterdata
+quartet-capture
+quartet-output
+serialbox
+list-based-flavorpack
+random-flavorpack
+quartet-templates
+epcpyyes
+quartet-epcis

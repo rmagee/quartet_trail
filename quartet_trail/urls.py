@@ -18,7 +18,7 @@ def register_models(app_list, exclude_models):
         app = apps.get_app_config(app_name)
         for model in list(app.models.values()):
             if models.get_model_fullname(model) not in exclude_models:
-                api_endpoint = url('^quartet-trail/' + model.__qualname__, views.QuartetTrailViewSet.as_view({'get': 'list'}))
+                api_endpoint = url('^quartet-trail/' + model.__qualname__ + '/?', views.QuartetTrailViewSet.as_view({'get': 'list'}))
                 urlpatterns.append(api_endpoint)
 
 register_models(models.tracked_app_list, models.exclude_models)

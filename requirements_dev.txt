@@ -2,3 +2,10 @@ bumpversion==0.5.3
 wheel==0.30.0
 django-model-utils>=2.0
 django-simple-history
+quartet-masterdata
+quartet-capture
+quartet-output
+serialbox
+list-based-flavorpack
+random-flavorpack
+quartet-templates

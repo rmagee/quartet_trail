@@ -26,8 +26,8 @@ class TestQuartet_trail(TestCase):
         r.name = "Updated Name"
         r.save()
         rule_history = models.HistoricalRule.objects.all()
-        self.assertEqual(rule_history[0].name, "Test Rule")
-        self.assertEqual(rule_history[1].name, "Updated Name")
+        self.assertEqual(rule_history[0].name, "Updated Name")
+        self.assertEqual(rule_history[1].name, "Test Rule")
         
 
     def tearDown(self):

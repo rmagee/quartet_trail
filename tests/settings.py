@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sites",
+    'quartet_epcis',
     'quartet_masterdata',
     'quartet_capture',
     'quartet_output',

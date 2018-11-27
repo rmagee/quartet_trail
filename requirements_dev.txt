@@ -9,3 +9,5 @@ serialbox
 list-based-flavorpack
 random-flavorpack
 quartet-templates
+epcpyyes
+quartet-epcis

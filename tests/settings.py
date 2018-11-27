@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sites",
-    'quartet_epcis',
     'quartet_masterdata',
     'quartet_capture',
     'quartet_output',
@@ -30,7 +29,9 @@ INSTALLED_APPS = [
     'list_based_flavorpack',
     'random_flavorpack',
     'quartet_templates',
-    "quartet_trail",
+    'simple_history',
+    'quartet_trail',
+    'quartet_epcis',
 ]
 
 SITE_ID = 1

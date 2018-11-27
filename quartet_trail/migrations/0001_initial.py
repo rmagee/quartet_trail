@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('quartet_masterdata', '0003_auto_20180824_2054'),
+        ('quartet_masterdata', '0001_initial'),
         ('serialbox', '0005_auto_20181031_1738'),
         ('quartet_output', '0002_auto_20180909_0946'),
         ('list_based_flavorpack', '0002_auto_20181002_1052'),

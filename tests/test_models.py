@@ -10,7 +10,7 @@ Tests for `quartet-trail` models module.
 
 from django.test import TestCase
 
-from quartet_trail import models
+#from quartet_trail import models
 
 
 class TestQuartet_trail(TestCase):

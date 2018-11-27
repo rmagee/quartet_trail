@@ -22,6 +22,13 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sites",
+    'quartet_masterdata',
+    'quartet_capture',
+    'quartet_output',
+    'serialbox',
+    'list_based_flavorpack',
+    'random_flavorpack',
+    'quartet_templates',
     "quartet_trail",
 ]
 

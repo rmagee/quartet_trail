@@ -14,7 +14,7 @@ Logs action in Quartet
 Documentation
 -------------
 
-The full documentation is at https://lduros.gitlab.io/quartet-trail/
+The full documentation is at https://serial-lab.gitlab.io/quartet-trail/
 
 Quickstart
 ----------

@@ -36,9 +36,12 @@ def _history_user_getter(historical_instance):
     except User.DoesNotExist:
         return None
 
+
 def _history_user_setter(historical_instance, user):
     if user is not None:
-        historical_instance.history_user_id = user.username
+        historical_instance.history_user_id = '{0}:{1}'.format(user.username,
+                                                               user.pk)
+
 
 class HistoricalRecords(sh_models.HistoricalRecords):
 
@@ -51,7 +54,8 @@ class HistoricalRecords(sh_models.HistoricalRecords):
                  history_user_getter=_history_user_getter,
                  history_user_setter=_history_user_setter, related_name=None,
                  use_base_model_db=False):
-        history_user_id_field = models.CharField(null=True, verbose_name='username',
+        history_user_id_field = models.CharField(null=True,
+                                                 verbose_name='username',
                                                  max_length=200)
         super().__init__(verbose_name, bases, user_related_name, table_name,
                          inherit, excluded_fields, history_id_field,

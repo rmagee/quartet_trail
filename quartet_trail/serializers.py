@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-class UserSerializer(serializers.ModelSerializer):
+class QU4RTETUserSerializer(serializers.ModelSerializer):
     '''
     User Serializer for task history.
     '''
@@ -13,8 +13,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 class QuartetTrailSerializer(serializers.ModelSerializer):
 
-    history_user = UserSerializer(read_only=True)
-    
+    history_user = QU4RTETUserSerializer(read_only=True)
+
     class Meta:
         model = None
         fields = '__all__'

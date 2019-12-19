@@ -4,7 +4,7 @@ Quartet Trail
 
 .. image:: https://gitlab.com/serial-lab/quartet_trail/badges/master/coverage.svg
    :target: https://gitlab.com/serial-lab/quartet_trail/pipelines
-.. image:: https://gitlab.com/serial-lab/quartet_trail/badges/master/build.svg
+.. image:: https://gitlab.com/serial-lab/quartet_trail/badges/master/pipeline.svg
    :target: https://gitlab.com/serial-lab/quartet_trail/commits/master
 .. image:: https://badge.fury.io/py/quartet-trail.svg
     :target: https://badge.fury.io/py/quartet-trail
